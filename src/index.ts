@@ -1,7 +1,12 @@
 import { Hono } from 'hono'
 import { basicAuth } from 'hono/basic-auth'
+// import { serveStatic } from 'hono/cloudflare-workers'
+// import manifest from '__STATIC_CONTENT_MANIFEST'
 
 const app = new Hono()
+
+// app.get('/static/*', serveStatic({ root: './', manifest }))
+// app.get('/favicon.ico', serveStatic({ path: './favicon.ico', manifest }))
 
 app.get('/', (c) => {
   return c.text('Hello Hono!')
